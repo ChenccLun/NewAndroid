@@ -1,5 +1,7 @@
 package com.example.newandroid;
 
+import android.content.SharedPreferences;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -12,4 +14,5 @@ import java.util.ListIterator;
 public class Global {
     public static final int aa=0;
     public static final ArrayList<ArrayList<String>> BookList = new ArrayList<>();
+
 }
