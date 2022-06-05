@@ -1,24 +1,13 @@
 package com.example.newandroid;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class MainActivity extends AppCompatActivity {
+public class BookListActivity extends AppCompatActivity {
 
     private Button toIsbnBtn = null;
     private Button toBookListBtn = null;
@@ -37,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         toIsbnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ISBNActivity.class);
+                Intent intent = new Intent(BookListActivity.this,ISBNActivity.class);
                 startActivity(intent);
             }
         });
