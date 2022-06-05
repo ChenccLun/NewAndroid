@@ -24,7 +24,7 @@ public class ISBNActivity extends AppCompatActivity {
     private Button mSearchBtn = null;
     private Button mAddBtn = null;
     private TextView mIsbnTxv = null;
-    private ListView superListView=null;
+    private ListView infoListView=null;
 
     String[] bookInfos = new String[4];
 
@@ -37,7 +37,7 @@ public class ISBNActivity extends AppCompatActivity {
         mIsbnEt =findViewById(R.id.editText);
         mSearchBtn=findViewById(R.id.button);
         mIsbnTxv = findViewById(R.id.receivedView);
-        superListView = findViewById(R.id.superListView);
+        infoListView = findViewById(R.id.infoListView);
 
         mAddBtn=findViewById(R.id.addButton);
         mAddBtn.setEnabled(false);
@@ -59,9 +59,9 @@ public class ISBNActivity extends AppCompatActivity {
         mAddBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                List<String>BookItem=new ArrayList<String>();
+                ArrayList<String>BookItem=new ArrayList<String>();
                 for(int i=0;i<4;i++)
-                    BookItem.add(bookInfos[i]);
+                    BookItem.add(bookInfos[i].split("：")[1]);
                 Global.BookList.add(BookItem);
                 Toast.makeText(getApplicationContext(), "添加成功", Toast.LENGTH_LONG).show();
                 mAddBtn.setEnabled(false);
@@ -96,7 +96,7 @@ public class ISBNActivity extends AppCompatActivity {
                         for(int i=1;i<4;i++)
                             bookInfos[i]="";
                     }
-                    superListView.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, bookInfos));
+                    infoListView.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, bookInfos));
 
                 }
                 else{

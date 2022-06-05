@@ -3,32 +3,36 @@ package com.example.newandroid;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class BookListActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
-    private Button toIsbnBtn = null;
-    private Button toBookListBtn = null;
+public class BookListActivity extends AppCompatActivity implements MyRecyclerViewAdapter.ItemClickListener {
 
+    MyRecyclerViewAdapter adapter;
+    RecyclerView recyclerView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_books);
 
-        //get component
-        toIsbnBtn = findViewById(R.id.homeButton1);
-        toBookListBtn = findViewById(R.id.homeButton2);
+        // set up the RecyclerView
+        recyclerView = findViewById(R.id.rvAnimals);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new MyRecyclerViewAdapter(this, Global.BookList);
+        adapter.setClickListener(this);
+        recyclerView.setAdapter(adapter);
+    }
 
-        //bind event
-        toIsbnBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BookListActivity.this,ISBNActivity.class);
-                startActivity(intent);
-            }
-        });
+    @Override
+    public void onItemClick(View view, int position) {
+        Toast.makeText(this, "You clicked " + adapter.getItem(position).get(0) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 }

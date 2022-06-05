@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Kiryu/AndroidStudioProjects/NewAndroid/app/src/main/res/layout/activity_books.xml" value="0.33" />
         <entry key="..\:/Users/Kiryu/AndroidStudioProjects/NewAndroid/app/src/main/res/layout/activity_isbn.xml" value="0.33" />
         <entry key="..\:/Users/Kiryu/AndroidStudioProjects/NewAndroid/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/Kiryu/AndroidStudioProjects/NewAndroid/app/src/main/res/layout/recyclerview_row.xml" value="0.22019464720194648" />
       </map>
     </option>
   </component>

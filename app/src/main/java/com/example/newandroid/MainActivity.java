@@ -41,5 +41,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        toBookListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,BookListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
